@@ -29,6 +29,6 @@ import Foundation
             target.thenRun?(val)
         }
         target.alwaysRun?()
-        target.alwaysRun = nil
+        target.thenRun = nil
     }
 }

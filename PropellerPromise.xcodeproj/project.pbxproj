@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		522B0B631E414D55009954E8 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B0B621E414D55009954E8 /* Promise.swift */; };
-		522B0B6A1E414F67009954E8 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B0B691E414F67009954E8 /* RequestError.swift */; };
-		522B0B6C1E415041009954E8 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B0B6B1E415041009954E8 /* Result.swift */; };
-		522B0B6E1E4150F8009954E8 /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B0B6D1E4150F8009954E8 /* ResultError.swift */; };
 		5279BBEA1E414CA900F71DF0 /* PropellerPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5279BBE01E414CA900F71DF0 /* PropellerPromise.framework */; };
-		5279BBEF1E414CA900F71DF0 /* PropellerPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5279BBEE1E414CA900F71DF0 /* PropellerPromiseTests.swift */; };
-		5279BBF11E414CA900F71DF0 /* PropellerPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 5279BBE31E414CA900F71DF0 /* PropellerPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3B62D021E41656200940C8E /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62CF81E41656100940C8E /* Promise.swift */; };
+		E3B62D031E41656200940C8E /* PropellerPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = E3B62CF91E41656100940C8E /* PropellerPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3B62D041E41656200940C8E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62CFA1E41656100940C8E /* Result.swift */; };
+		E3B62D051E41656200940C8E /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62CFB1E41656100940C8E /* ResultError.swift */; };
+		E3B62D0A1E41656E00940C8E /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62CFF1E41656100940C8E /* RequestError.swift */; };
+		E3B62D0B1E41657200940C8E /* PropellerPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62D001E41656100940C8E /* PropellerPromiseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,16 +27,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		522B0B621E414D55009954E8 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
-		522B0B691E414F67009954E8 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
-		522B0B6B1E415041009954E8 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		522B0B6D1E4150F8009954E8 /* ResultError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultError.swift; sourceTree = "<group>"; };
 		5279BBE01E414CA900F71DF0 /* PropellerPromise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PropellerPromise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5279BBE31E414CA900F71DF0 /* PropellerPromise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PropellerPromise.h; sourceTree = "<group>"; };
-		5279BBE41E414CA900F71DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5279BBE91E414CA900F71DF0 /* PropellerPromiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PropellerPromiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5279BBEE1E414CA900F71DF0 /* PropellerPromiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropellerPromiseTests.swift; sourceTree = "<group>"; };
-		5279BBF01E414CA900F71DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3B62CF71E41656100940C8E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3B62CF81E41656100940C8E /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		E3B62CF91E41656100940C8E /* PropellerPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropellerPromise.h; sourceTree = "<group>"; };
+		E3B62CFA1E41656100940C8E /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E3B62CFB1E41656100940C8E /* ResultError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultError.swift; sourceTree = "<group>"; };
+		E3B62CFD1E41656100940C8E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3B62CFF1E41656100940C8E /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		E3B62D001E41656100940C8E /* PropellerPromiseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropellerPromiseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,19 +58,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		522B0B681E414F67009954E8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				522B0B691E414F67009954E8 /* RequestError.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		5279BBD61E414CA900F71DF0 = {
 			isa = PBXGroup;
 			children = (
-				5279BBE21E414CA900F71DF0 /* PropellerPromise */,
-				5279BBED1E414CA900F71DF0 /* PropellerPromiseTests */,
+				E3B62CF61E41656100940C8E /* Source */,
+				E3B62CFC1E41656100940C8E /* Tests */,
 				5279BBE11E414CA900F71DF0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,26 +76,34 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5279BBE21E414CA900F71DF0 /* PropellerPromise */ = {
+		E3B62CF61E41656100940C8E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				522B0B621E414D55009954E8 /* Promise.swift */,
-				522B0B6B1E415041009954E8 /* Result.swift */,
-				522B0B6D1E4150F8009954E8 /* ResultError.swift */,
-				5279BBE31E414CA900F71DF0 /* PropellerPromise.h */,
-				5279BBE41E414CA900F71DF0 /* Info.plist */,
+				E3B62CF81E41656100940C8E /* Promise.swift */,
+				E3B62CFA1E41656100940C8E /* Result.swift */,
+				E3B62CFB1E41656100940C8E /* ResultError.swift */,
+				E3B62CF71E41656100940C8E /* Info.plist */,
+				E3B62CF91E41656100940C8E /* PropellerPromise.h */,
 			);
-			path = PropellerPromise;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		5279BBED1E414CA900F71DF0 /* PropellerPromiseTests */ = {
+		E3B62CFC1E41656100940C8E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				522B0B681E414F67009954E8 /* Models */,
-				5279BBEE1E414CA900F71DF0 /* PropellerPromiseTests.swift */,
-				5279BBF01E414CA900F71DF0 /* Info.plist */,
+				E3B62CFE1E41656100940C8E /* Models */,
+				E3B62CFD1E41656100940C8E /* Info.plist */,
+				E3B62D001E41656100940C8E /* PropellerPromiseTests.swift */,
 			);
-			path = PropellerPromiseTests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E3B62CFE1E41656100940C8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E3B62CFF1E41656100940C8E /* RequestError.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,7 +113,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5279BBF11E414CA900F71DF0 /* PropellerPromise.h in Headers */,
+				E3B62D031E41656200940C8E /* PropellerPromise.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,9 +217,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				522B0B6C1E415041009954E8 /* Result.swift in Sources */,
-				522B0B6E1E4150F8009954E8 /* ResultError.swift in Sources */,
-				522B0B631E414D55009954E8 /* Promise.swift in Sources */,
+				E3B62D041E41656200940C8E /* Result.swift in Sources */,
+				E3B62D051E41656200940C8E /* ResultError.swift in Sources */,
+				E3B62D021E41656200940C8E /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,8 +227,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				522B0B6A1E414F67009954E8 /* RequestError.swift in Sources */,
-				5279BBEF1E414CA900F71DF0 /* PropellerPromiseTests.swift in Sources */,
+				E3B62D0A1E41656E00940C8E /* RequestError.swift in Sources */,
+				E3B62D0B1E41657200940C8E /* PropellerPromiseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +351,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PropellerPromise/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.propellerlabs.PropellerPromise;
@@ -371,7 +371,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PropellerPromise/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.propellerlabs.PropellerPromise;
@@ -385,7 +385,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = PropellerPromiseTests/Info.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.propellerlabs.PropellerPromiseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -397,7 +399,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = PropellerPromiseTests/Info.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.propellerlabs.PropellerPromiseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

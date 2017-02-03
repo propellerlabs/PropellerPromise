@@ -28,8 +28,6 @@ github "propellerlabs/PropellerPromise"
 
 Cocoapods will come soon, faster if there is a demand for it.
 
----
-
 
 ##Usage
 

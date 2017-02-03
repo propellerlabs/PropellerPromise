@@ -8,23 +8,30 @@
 
 import Foundation
 
-public final class Promise<Wrapped> {
+public class Promise<Wrapped>: Promisable {
+    
+    var combined: CombinePromise?
+    public typealias ErrorType = Error
 
     typealias CompleteType = ((Wrapped) -> Void)
 
     func fulfill(_ value: Wrapped) {
         let result = Result<Wrapped>(value)
         result.propel(target: self)
+        combined?.setResult(value: value)
+        combined = nil
     }
     
-    func reject(_ value: Error) {
+    func reject(_ value: ErrorType) {
         let result = Result<Wrapped>(value)
         result.propel(target: self)
+        combined?.setError(error: value)
+        combined = nil
     }
     
     var alwaysRun: (() -> Void)?
     var completeRun: CompleteType?
-    var failedRun: ((Error) -> Void)?
+    var failedRun: ((ErrorType) -> Void)?
     var thenRun: CompleteType?
 
     @discardableResult
@@ -38,7 +45,6 @@ public final class Promise<Wrapped> {
         return promise
     }
 
-
     @discardableResult
     public func complete(action: @escaping (Wrapped) -> Void) -> Promise<Wrapped> {
         completeRun = action
@@ -46,7 +52,7 @@ public final class Promise<Wrapped> {
     }
 
     @discardableResult
-    public func failure(action: @escaping (Error) -> Void) -> Promise<Wrapped> {
+    public func failure(action: @escaping (ErrorType) -> Void) -> Promise<Wrapped> {
         failedRun = action
         return self
     }

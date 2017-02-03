@@ -12,7 +12,7 @@ This framework is meant to be a lightweight promise/futures framework with suppo
 ## Installation
 
 ### Swift Package Manager 
-```
+```Swift
 dependencies: [
 	.Package(url: "https://github.com/propellerlabs/PropellerPromise.git", majorVersion: 1)
 ]

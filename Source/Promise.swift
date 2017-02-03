@@ -58,6 +58,20 @@ public class Promise<Wrapped>: Promisable {
     }
     
     @discardableResult
+    public func failure<T: Error>(_ type: T.Type, action: @escaping (T?) -> Void) -> Promise<Wrapped> {
+        failedRun = { (error: ErrorType) in
+            guard let res = error as? T else {
+                assert(false, "invalid cast to of error:\(type(of: error)) to errorType:\(type)")
+                action(nil)
+                return
+            }
+            action(res)
+        }
+        return self
+    }
+
+    
+    @discardableResult
     public func always(action: @escaping () -> Void) -> Promise<Wrapped> {
         alwaysRun = action
         return self

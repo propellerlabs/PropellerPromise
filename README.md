@@ -1,6 +1,7 @@
 ![Travis](https://api.travis-ci.org/propellerlabs/PropellerPromise.svg?branch=master)
 ![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 ![Swift](https://img.shields.io/badge/language-swift-orange.svg)
+![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)
 ![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)
 ![MIT License](https://img.shields.io/badge/license-MIT-000000.svg)
 
@@ -40,8 +41,8 @@ func successPromise() -> Promise<String> {
 let promise = Promise<String>()
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-// make asnc fullfillment of promise result
-promise.fulfill(self.successString)
+	// make asnc fullfillment of promise result
+	promise.fulfill(self.successString)
 }
 
 //return promise
@@ -53,11 +54,10 @@ return promise
 ```Swift
 successPromise()
 .complete { value in
-XCTAssert(value == self.successString)
-expectation.fulfill()
+	print("complete with value: \(value)")
 }
 .failure { error in
-XCTFail("should succeed, error: \(error)")
+	print("failed wih error: \(error)")
 }
 ```
 
@@ -65,15 +65,15 @@ XCTFail("should succeed, error: \(error)")
 ```Swift
 successPromise()
 .then { val -> Bool in
-expectation1.fulfill()
-return val == self.successString
+	// do something with val
+	return val == self.successString
 }
 .then { isSuccess -> Int in
-expectation2.fulfill()
-return isSuccess ? 1 : 0
+	// do something with isSuccess
+	return isSuccess ? 1 : 0
 }
 .then { successInt -> Void in
-expectation3.fulfill()
+	// do something with successInt
 }
 ```
 
@@ -84,30 +84,30 @@ expectation3.fulfill()
 
 let p1 = successPromise()
 .complete { value in
-print("completed! \(value)")
+	print("completed! \(value)")
 }
 
 let p2 = successPromise()
 .complete { value in
-print("completed! \(value)")
+	print("completed! \(value)")
 }
 
 let p3 = successPromise()
 .complete { value in
-print("completed! \(value)")
+	print("completed! \(value)")
 }
 
 // Then want to fire a combined promise after p1,p2,p3 are all fullfilled/rejected
 
 CombinePromise(promises: p1,p2,p3)
 .complete { results in
-for result in results {
-print(result)
-}
+	for result in results {
+		print(result)
+	}
 }
 .failure(MultiError.self) { errors in
-for error in errors {
-print(error)
-}
+	for error in errors {
+		print(error)
+	}
 }
 ```

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import PropellerPromise
+import PropellerPromise
 
 class PropellerPromiseTests: XCTestCase {
     

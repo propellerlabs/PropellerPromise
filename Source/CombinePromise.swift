@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol Promisable {
+public protocol Promisable {
     var combined: CombinePromise? { get set }
 }
 
 public struct MultiError: Error {
-    init(errors: [Error]) {
+    public init(errors: [Error]) {
         self.errors = errors
     }
-    let errors: [Error]
+    public let errors: [Error]
 }
 
 public final class CombinePromise: Promise<[Any]> {
@@ -52,7 +52,7 @@ public final class CombinePromise: Promise<[Any]> {
         incrementPromise()
     }
     
-    init(promises: Promisable... ) {
+    public init(promises: Promisable... ) {
         expectedCount = promises.count
         super.init()
         for (var promise) in promises {

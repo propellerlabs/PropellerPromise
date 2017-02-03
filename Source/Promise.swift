@@ -10,19 +10,21 @@ import Foundation
 
 public class Promise<Wrapped>: Promisable {
     
-    var combined: CombinePromise?
+    public init() {}
+    
+    public var combined: CombinePromise?
     public typealias ErrorType = Error
 
     typealias CompleteType = ((Wrapped) -> Void)
 
-    func fulfill(_ value: Wrapped) {
+    public func fulfill(_ value: Wrapped) {
         let result = Result<Wrapped>(value)
         result.propel(target: self)
         combined?.setResult(value: value)
         combined = nil
     }
     
-    func reject(_ value: ErrorType) {
+    public func reject(_ value: ErrorType) {
         let result = Result<Wrapped>(value)
         result.propel(target: self)
         combined?.setError(error: value)

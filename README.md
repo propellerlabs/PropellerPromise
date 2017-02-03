@@ -35,16 +35,16 @@ Cocoapods will come soon, faster if there is a demand for it.
 ### 1. Return a promise in a function that asyncronously deals with its result
 ```Swift
 func successPromise() -> Promise<String> {
-// create promise
-let promise = Promise<String>()
+	// create promise
+	let promise = Promise<String>()
 
-DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-	// make asnc fullfillment of promise result
-	promise.fulfill(self.successString)
-}
+	DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+		// make asnc fullfillment of promise result
+		promise.fulfill(self.successString)
+	}
 
-//return promise
-return promise
+	//return promise
+	return promise
 }
 ```
 

@@ -67,8 +67,11 @@ class PropellerPromiseTests: XCTestCase {
         .complete { value in
             XCTFail("should fail!, value: \(value)")
         }
-        .failure { error in
-            XCTAssert(error is RequestError)
+        .failure(RequestError.self) { error in
+            switch error {
+            case .unknown : break
+            default: XCTFail()
+            }
             expectation.fulfill()
         }
         waitForExpectations(timeout: 1.0, handler: nil)
@@ -187,7 +190,8 @@ class PropellerPromiseTests: XCTestCase {
             .complete {_ in
                 XCTFail()
             }
-            .failure { error in
+            .failure(MultiError.self) { errors in
+                XCTAssert(errors.errors.count == 1)
                 XCTAssert(p1Done)
                 XCTAssert(p2Done)
                 XCTAssert(!p3Done)

@@ -57,6 +57,26 @@ public class Promise<Wrapped>: Promisable {
         return self
     }
     
+    /**
+     Allows async response for failure case with way to cast to an Error type. If the `type` provided is incorrect this is handled as programmer error, an assert is thrown and the failure action is not called.
+     - Parameters:
+        - type: provide a type conforming to `Error`
+        - action: failure action function that takes in `type` specified via previous parameter.
+     - Returns: a `Promise<Wrapped>`
+    */
+    @discardableResult
+    public func failure<T: Error>(_ type: T.Type, action: @escaping (T) -> Void) -> Promise<Wrapped> {
+        failedRun = { (error: ErrorType) in
+            guard let res = error as? T else {
+                assert(false, "invalid cast to of error:\(type(of: error)) to errorType:\(type)")
+                return
+            }
+            action(res)
+        }
+        return self
+    }
+
+    
     @discardableResult
     public func always(action: @escaping () -> Void) -> Promise<Wrapped> {
         alwaysRun = action

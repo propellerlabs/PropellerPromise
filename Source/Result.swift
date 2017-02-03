@@ -8,7 +8,7 @@
 
 import Foundation
 
- enum Result<Wrapped> {
+enum Result<Wrapped> {
     case error(Error),
     some(Wrapped)
     

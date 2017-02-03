@@ -19,7 +19,7 @@ public struct MultiError: Error {
     let errors: [Error]
 }
 
-public class CombinePromise: Promise<[Any]> {
+public final class CombinePromise: Promise<[Any]> {
     
     public typealias ErrorType = MultiError
         

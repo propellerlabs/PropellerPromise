@@ -5,7 +5,7 @@
 ![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)
 ![MIT License](https://img.shields.io/badge/license-MIT-000000.svg)
 
-#Propeller Promise
+#PropellerPromise
 
 This framework is meant to be a lightweight promise/futures framework with support for async result types, piping `then` functions, creating promises from a set of other promises to be fired when that set is complete.
 

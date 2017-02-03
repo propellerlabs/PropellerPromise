@@ -10,7 +10,7 @@
 		522B0B631E414D55009954E8 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B0B621E414D55009954E8 /* Promise.swift */; };
 		522B0B6A1E414F67009954E8 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B0B691E414F67009954E8 /* RequestError.swift */; };
 		522B0B6C1E415041009954E8 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B0B6B1E415041009954E8 /* Result.swift */; };
-		522B0B6E1E4150F8009954E8 /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B0B6D1E4150F8009954E8 /* ResultError.swift */; };
+		522B0B701E4407D1009954E8 /* CombinePromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B0B6F1E4407D1009954E8 /* CombinePromise.swift */; };
 		5279BBEA1E414CA900F71DF0 /* PropellerPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5279BBE01E414CA900F71DF0 /* PropellerPromise.framework */; };
 		5279BBEF1E414CA900F71DF0 /* PropellerPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5279BBEE1E414CA900F71DF0 /* PropellerPromiseTests.swift */; };
 		5279BBF11E414CA900F71DF0 /* PropellerPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 5279BBE31E414CA900F71DF0 /* PropellerPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,7 +30,7 @@
 		522B0B621E414D55009954E8 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 		522B0B691E414F67009954E8 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		522B0B6B1E415041009954E8 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		522B0B6D1E4150F8009954E8 /* ResultError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultError.swift; sourceTree = "<group>"; };
+		522B0B6F1E4407D1009954E8 /* CombinePromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinePromise.swift; sourceTree = "<group>"; };
 		5279BBE01E414CA900F71DF0 /* PropellerPromise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PropellerPromise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5279BBE31E414CA900F71DF0 /* PropellerPromise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PropellerPromise.h; sourceTree = "<group>"; };
 		5279BBE41E414CA900F71DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,8 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				522B0B621E414D55009954E8 /* Promise.swift */,
+				522B0B6F1E4407D1009954E8 /* CombinePromise.swift */,
 				522B0B6B1E415041009954E8 /* Result.swift */,
-				522B0B6D1E4150F8009954E8 /* ResultError.swift */,
 				5279BBE31E414CA900F71DF0 /* PropellerPromise.h */,
 				5279BBE41E414CA900F71DF0 /* Info.plist */,
 			);
@@ -217,8 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522B0B701E4407D1009954E8 /* CombinePromise.swift in Sources */,
 				522B0B6C1E415041009954E8 /* Result.swift in Sources */,
-				522B0B6E1E4150F8009954E8 /* ResultError.swift in Sources */,
 				522B0B631E414D55009954E8 /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,7 +15,7 @@ class PropellerPromiseTests: XCTestCase {
     
     func successPromise() -> Promise<String> {
         let promise = Promise<String>()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             promise.fulfill(self.successString)
         }
         return promise
@@ -23,7 +23,7 @@ class PropellerPromiseTests: XCTestCase {
     
     func failurePromise() -> Promise<String> {
         let promise = Promise<String>()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             promise.reject(RequestError.unknown)
         }
         return promise

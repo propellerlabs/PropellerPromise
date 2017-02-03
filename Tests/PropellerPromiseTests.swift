@@ -68,10 +68,6 @@ class PropellerPromiseTests: XCTestCase {
             XCTFail("should fail!, value: \(value)")
         }
         .failure(RequestError.self) { error in
-            guard let error = error else {
-                XCTFail()
-                return
-            }
             switch error {
             case .unknown : break
             default: XCTFail()
@@ -195,10 +191,6 @@ class PropellerPromiseTests: XCTestCase {
                 XCTFail()
             }
             .failure(MultiError.self) { errors in
-                guard let errors = errors else {
-                    XCTFail()
-                    return
-                }
                 XCTAssert(errors.errors.count == 1)
                 XCTAssert(p1Done)
                 XCTAssert(p2Done)

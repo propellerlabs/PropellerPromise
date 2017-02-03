@@ -12,14 +12,14 @@ protocol Promisable {
     var combined: CombinePromise? { get set }
 }
 
-struct MultiError: Error {
+public struct MultiError: Error {
     init(errors: [Error]) {
         self.errors = errors
     }
     let errors: [Error]
 }
 
-class CombinePromise: Promise<[Any]> {
+public class CombinePromise: Promise<[Any]> {
     
     public typealias ErrorType = MultiError
         

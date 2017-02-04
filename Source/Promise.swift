@@ -8,13 +8,19 @@
 
 import Foundation
 
-public class Promise<Wrapped>: Promisable {
+protocol ThenPromiseable {
+    var failedRun: ((Error) -> Void)? { get set }
+    var thenFail: ThenPromiseable? { get }
+}
+
+public class Promise<Wrapped>: Promisable, ThenPromiseable {
     
     public init() {}
     
     public var combined: CombinePromise?
     public typealias ErrorType = Error
-
+    
+    
     typealias CompleteType = ((Wrapped) -> Void)
 
     public func fulfill(_ value: Wrapped) {
@@ -35,6 +41,7 @@ public class Promise<Wrapped>: Promisable {
     var completeRun: CompleteType?
     var failedRun: ((ErrorType) -> Void)?
     var thenRun: CompleteType?
+    var thenFail: ThenPromiseable?
 
     @discardableResult
     public func then<U>(action: @escaping (Wrapped) throws -> U) -> Promise<U> {
@@ -44,6 +51,7 @@ public class Promise<Wrapped>: Promisable {
                 promise.fulfill(res)
             }
         }
+        thenFail = promise
         return promise
     }
 

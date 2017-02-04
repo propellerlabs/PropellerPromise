@@ -24,6 +24,13 @@ enum Result<Wrapped> {
         switch self {
         case .error(let err):
             target.failedRun?(err)
+            
+            //find any `then` chained promises to fire `failure` result
+            var next = target.thenFail
+            while (next != nil) {
+                next?.failedRun?(err)
+                next = next?.thenFail
+            }
         case .some(let val):
             target.completeRun?(val)
             target.thenRun?(val)

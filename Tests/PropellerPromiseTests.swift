@@ -48,6 +48,23 @@ class PropellerPromiseTests: XCTestCase {
         waitForExpectations(timeout: 1.0, handler: nil)
     }
     
+    func testThenFailingChainingPromise() {
+        let expectation = self.expectation(description: "should fire failure")
+        failurePromise()
+            .then { val -> Bool in
+                XCTFail()
+                return val == self.successString
+            }
+            .then { isSuccess -> Int in
+                XCTFail()
+                return isSuccess ? 1 : 0
+            }
+            .failure(RequestError.self) { error in
+                expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
     func testSuccessStringPromise() {
         let expectation = self.expectation(description: "should return success \(self.successString)")
         successPromise()

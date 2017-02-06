@@ -96,14 +96,14 @@ let p3 = successPromise()
 
 // Then want to fire a combined promise after p1,p2,p3 are all fullfilled/rejected
 
-CombinePromise(promises: p1,p2,p3)
+CombinePromise(promises: [p1,p2,p3])
 .complete { results in
 	for result in results {
 		print(result)
 	}
 }
 .failure(MultiError.self) { errors in
-	for error in errors {
+	for error in errors.errors {
 		print(error)
 	}
 }

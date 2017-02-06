@@ -37,7 +37,7 @@ public class CombinePromise: Promise<[Any]> {
     
     var result = [Any]()
     var errors = [Error]()
-    let expectedCount: Int
+    var expectedCount = 0
     var fullfilledCount = 0
     
     func incrementPromise() {
@@ -76,11 +76,17 @@ public class CombinePromise: Promise<[Any]> {
      fullfilled/rejected.
      
     */
-    public init(promises: Promisable... ) {
-        expectedCount = promises.count
+    public init(promises: [Promisable] ) {
         super.init()
+        var addedCount = 0
         for (var promise) in promises {
-            promise.combined = self
+            
+            //check if already set to self in case same Promise added multiple times.
+            if promise.combined !== self {
+                addedCount += 1
+                promise.combined = self
+            }
         }
+        expectedCount = addedCount
     }
 }

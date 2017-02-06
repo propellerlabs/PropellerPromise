@@ -14,6 +14,8 @@
 		5279BBEA1E414CA900F71DF0 /* PropellerPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5279BBE01E414CA900F71DF0 /* PropellerPromise.framework */; };
 		5279BBEF1E414CA900F71DF0 /* PropellerPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5279BBEE1E414CA900F71DF0 /* PropellerPromiseTests.swift */; };
 		5279BBF11E414CA900F71DF0 /* PropellerPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 5279BBE31E414CA900F71DF0 /* PropellerPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5285E11B1E4903B80028E12E /* StubbedCombinedPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5285E1191E49034C0028E12E /* StubbedCombinedPromise.swift */; };
+		5285E11E1E490C880028E12E /* CombinedPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5285E11C1E490A0C0028E12E /* CombinedPromiseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		5279BBE91E414CA900F71DF0 /* PropellerPromiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PropellerPromiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5279BBEE1E414CA900F71DF0 /* PropellerPromiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropellerPromiseTests.swift; sourceTree = "<group>"; };
 		5279BBF01E414CA900F71DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5285E1191E49034C0028E12E /* StubbedCombinedPromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubbedCombinedPromise.swift; sourceTree = "<group>"; };
+		5285E11C1E490A0C0028E12E /* CombinedPromiseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinedPromiseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			children = (
 				522B0B681E414F67009954E8 /* Models */,
 				5279BBEE1E414CA900F71DF0 /* PropellerPromiseTests.swift */,
+				5285E1191E49034C0028E12E /* StubbedCombinedPromise.swift */,
+				5285E11C1E490A0C0028E12E /* CombinedPromiseTests.swift */,
 				5279BBF01E414CA900F71DF0 /* Info.plist */,
 			);
 			path = Tests;
@@ -227,7 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5285E11E1E490C880028E12E /* CombinedPromiseTests.swift in Sources */,
 				522B0B6A1E414F67009954E8 /* RequestError.swift in Sources */,
+				5285E11B1E4903B80028E12E /* StubbedCombinedPromise.swift in Sources */,
 				5279BBEF1E414CA900F71DF0 /* PropellerPromiseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

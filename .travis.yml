@@ -1,0 +1,4 @@
+language: objective-c
+osx_image: xcode8
+script: 
+  — xcodebuild clean build test -scheme PropellerPromise -destination "platform=iOS Simulator, name=iPhone 6S"

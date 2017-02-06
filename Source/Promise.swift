@@ -19,6 +19,7 @@ public class Promise<Wrapped>: Promisable, ThenPromiseable {
     ///Create new promise
     public init() {}
     
+    /// `CombinePromise` that will be fired after this `Promise` is fullfilled/rejected (iff all other `Promise`s being waited on by the `CombinedPromise` are also fullfilled/rejected)
     public var combined: CombinePromise?
     
     typealias CompleteType = ((Wrapped) -> Void)
@@ -27,7 +28,7 @@ public class Promise<Wrapped>: Promisable, ThenPromiseable {
     When async task is completed successfully with a `Wrapped` value. Pass it into the promise via `fullfill(:)`
      
      - Parameters:
-        - value: provide a type conforming to `Error`
+        - value: provide a Promise associated type or `Wrapped` value.
      */
     public func fulfill(_ value: Wrapped) {
         let result = Result<Wrapped>(value)
@@ -36,7 +37,12 @@ public class Promise<Wrapped>: Promisable, ThenPromiseable {
         combined = nil
     }
     
-    //TODO
+    /**
+     When async task is finished with a failure an `Error` value should be passed into this `reject(:)` function to trigger the promise's `failure` case.
+     
+     - Parameters:
+     - value: provide a type conforming to `Error`
+     */
     public func reject(_ value: Error) {
         let result = Result<Wrapped>(value)
         result.propel(target: self)

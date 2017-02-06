@@ -12,9 +12,9 @@ This framework is meant to be a lightweight promise/futures framework with suppo
 ## Installation
 
 ### Swift Package Manager 
-```
+```Swift
 dependencies: [
-.Package(url: "https://github.com/propellerlabs/PropellerPromise.git", majorVersion: 1)
+	.Package(url: "https://github.com/propellerlabs/PropellerPromise.git", majorVersion: 1)
 ]
 ```
 
@@ -32,14 +32,14 @@ Cocoapods will come soon, faster if there is a demand for it.
 ##Usage
 
 
-### 1. Return a promise in a function that asyncronously deals with its result
+### 1. Return a promise in a function that asyncronously deals with it's result
 ```Swift
 func successPromise() -> Promise<String> {
 	// create promise
 	let promise = Promise<String>()
 
 	DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-		// make asnc fullfillment of promise result
+		// make async fullfillment of promise result
 		promise.fulfill(self.successString)
 	}
 
@@ -59,7 +59,7 @@ successPromise()
 }
 ```
 
-### 3. pipe results together via a `then` functions passing different return types together:
+### 3. Pipe results together via `then` functions passing different return types together:
 ```Swift
 successPromise()
 .then { val -> Bool in
@@ -77,7 +77,6 @@ successPromise()
 
 ### 4. Create a promise that fires after several other promises finish using `CombinePromise`:
 ```Swift
-
 // Say we have some promises we are waiting on:
 
 let p1 = successPromise()

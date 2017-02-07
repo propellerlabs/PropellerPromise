@@ -13,18 +13,18 @@ protocol ThenPromiseable {
     var thenFail: ThenPromiseable? { get }
 }
 
-///Class that represents a promise/future. Once created a `Promise` object 
-///can be returned immediately and either `complete` `then` or `failure` will 
-///be called later when an async tasks passes in a fullfillment value or 
-///rejection error.
+/// Class that represents a promise/future. Once created a `Promise` object
+/// can be returned immediately and either `complete` `then` or `failure` will
+/// be called later when an async tasks passes in a fullfillment value or
+/// rejection error.
 public class Promise<Wrapped>: Promisable, ThenPromiseable {
     
-    ///Create new promise
+    /// Create new promise
     public init() {}
     
     /// `CombinePromise` that will be fired after this `Promise` is 
-    ///fullfilled/rejected (iff all other `Promise`s being waited on by the 
-    ///`CombinedPromise` are also fullfilled/rejected)
+    /// fullfilled/rejected (iff all other `Promise`s being waited on by the
+    /// `CombinedPromise` are also fullfilled/rejected)
     public var combined: CombinePromise?
     
     typealias CompleteType = ((Wrapped) -> Void)
@@ -49,7 +49,7 @@ public class Promise<Wrapped>: Promisable, ThenPromiseable {
      
      - Parameters:
         - value: provide a type conforming to `Error`
-     */
+    */
     public func reject(_ value: Error) {
         let result = Result<Wrapped>(value)
         result.propel(target: self)

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Promise Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/Promise" class="dashAnchor"></a>
+    <a title="Promise Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">PropellerPromise Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/propellerlabs/PropellerPromise"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fgithub%2Ecom%2Fpropellerlabs%2FPropellerPromise%2Ftree%2Fmaster%2FSource%2Fdocs%2Fswift_output%2Fdocsets%2FPropellerPromise%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">PropellerPromise Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Promise Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CombinePromise.html">CombinePromise</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Promise.html">Promise</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Promisable.html">Promisable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/MultiError.html">MultiError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Promise</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Wrapped</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Promisable.html">Promisable</a></span><span class="p">,</span> <span class="kt">ThenPromiseable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Class that represents a promise/future. Once created a <code>Promise</code> object
+can be returned immediately and either <code>complete</code> <code>then</code> or <code>failure</code> will
+be called later when an async tasks passes in a fullfillment value or
+rejection error.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC16PropellerPromise7PromisecFT_GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC16PropellerPromise7PromisecFT_GS0_x_">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create new promise</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/propellerlabs/PropellerController/tree/master/Source/Promise.swift#L23">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC16PropellerPromise7Promise8combinedGSqCS_14CombinePromise_"></a>
+                    <a name="//apple_ref/swift/Property/combined" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC16PropellerPromise7Promise8combinedGSqCS_14CombinePromise_">combined</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code><a href="../Classes/CombinePromise.html">CombinePromise</a></code> that will be fired after this <code>Promise</code> is 
+fullfilled/rejected (iff all other <code>Promise</code>s being waited on by the
+<code>CombinedPromise</code> are also fullfilled/rejected)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">combined</span><span class="p">:</span> <span class="kt"><a href="../Classes/CombinePromise.html">CombinePromise</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/propellerlabs/PropellerController/tree/master/Source/Promise.swift#L28">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC16PropellerPromise7Promise7fulfillFxT_"></a>
+                    <a name="//apple_ref/swift/Method/fulfill(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC16PropellerPromise7Promise7fulfillFxT_">fulfill(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When async task is completed successfully with a <code>Wrapped</code> value. Pass it 
+ into the promise via <code>fullfill(:)</code></p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>value: provide a Promise associated type or <code>Wrapped</code> value.</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fulfill</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Wrapped</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>provide a Promise associated type or <code>Wrapped</code> value.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/propellerlabs/PropellerController/tree/master/Source/Promise.swift#L39-L44">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC16PropellerPromise7Promise6rejectFPs5Error_T_"></a>
+                    <a name="//apple_ref/swift/Method/reject(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC16PropellerPromise7Promise6rejectFPs5Error_T_">reject(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When async task is finished with a failure an <code>Error</code> value should be 
+passed into this <code>reject(:)</code> function to trigger the promise&rsquo;s <code>failure</code> case.</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>value: provide a type conforming to <code>Error</code></li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">reject</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>provide a type conforming to <code>Error</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/propellerlabs/PropellerController/tree/master/Source/Promise.swift#L53-L58">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC16PropellerPromise7Promise4thenurFT6actionFzxqd___GS0_qd___"></a>
+                    <a name="//apple_ref/swift/Method/then(action:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC16PropellerPromise7Promise4thenurFT6actionFzxqd___GS0_qd___">then(action:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allows async response for <code>then</code> case, which will return a new promise 
+ matching the return type specified in your <code>action</code> parameter. 
+ Called iff promise is fullfilled.</p>
+
+<p><li><p>Parameters:</p></p>
+
+<p><ul>
+<li>type: provide a type conforming to <code>Error</code></li>
+<li>action: throwable function that takes in <code>Wrapped</code> value and returns
+a generic <code>U</code> value.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <p>created a new <code>Promise&lt;U&gt;</code> where <code>U</code> is the return type of the 
+<code>action</code> parameter</p></p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">then</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Wrapped</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">U</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>provide a type conforming to <code>Error</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>action</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>throwable function that takes in <code>Wrapped</code> value and returns a generic <code>U</code> value.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>created a new <code>Promise&lt;U&gt;</code> where <code>U</code> is the return type of the <code>action</code> parameter</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/propellerlabs/PropellerController/tree/master/Source/Promise.swift#L80-L89">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC16PropellerPromise7Promise8completeFT6actionFxT__GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/complete(action:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC16PropellerPromise7Promise8completeFT6actionFxT__GS0_x_">complete(action:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allows async response for completion case. Called iff promise is fullfilled.</p>
+
+<p><li><p>Parameters:</p></p>
+
+<p><ul>
+<li>action: failure action function that takes in generic <code>Wrapped</code> 
+associated type.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <p><code>self</code> which is of type <code>Promise&lt;Wrapped&gt;</code></p></p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">complete</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Wrapped</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Wrapped</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>action</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>failure action function that takes in generic <code>Wrapped</code> associated type.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>self</code> which is of type <code>Promise&lt;Wrapped&gt;</code></p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/propellerlabs/PropellerController/tree/master/Source/Promise.swift#L101-L104">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC16PropellerPromise7Promise7failureFT6actionFPs5Error_T__GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/failure(action:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC16PropellerPromise7Promise7failureFT6actionFPs5Error_T__GS0_x_">failure(action:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allows async response for failure case with way to cast to an Error type.
+Called iff promise is rejected.</p>
+
+<p><li><p>Parameters:</p></p>
+
+<p><ul>
+<li>action: failure action function that takes in a type comforming to <code>Error</code>.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <p><code>self</code> which is of type <code>Promise&lt;Wrapped&gt;</code></p></p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">failure</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Wrapped</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>action</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>failure action function that takes in a type comforming to <code>Error</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>self</code> which is of type <code>Promise&lt;Wrapped&gt;</code></p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/propellerlabs/PropellerController/tree/master/Source/Promise.swift#L116-L119">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC16PropellerPromise7Promise7failureuRd__s5ErrorrFTMqd__6actionFqd__T__GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/failure(_:action:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC16PropellerPromise7Promise7failureuRd__s5ErrorrFTMqd__6actionFqd__T__GS0_x_">failure(_:action:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allows async response for failure case with way to cast to an Error type. 
+If the <code>type</code> provided is incorrect this is handled as programmer error, 
+an assert is thrown and the failure action is not called. Called iff promise
+is rejected.</p>
+
+<p><li><p>Parameters:</p></p>
+
+<p><ul>
+<li>type: provide a type conforming to <code>Error</code></li>
+<li>action: failure action function that takes in <code>type</code> specified via previous 
+parameter.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <p><code>self</code> which is of type <code>Promise&lt;Wrapped&gt;</code></p></p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">failure</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Error</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Wrapped</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>provide a type conforming to <code>Error</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>action</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>failure action function that takes in <code>type</code> specified via previous parameter.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>self</code> which is of type <code>Promise&lt;Wrapped&gt;</code></p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/propellerlabs/PropellerController/tree/master/Source/Promise.swift#L135-L144">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC16PropellerPromise7Promise6alwaysFT6actionFT_T__GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/always(action:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC16PropellerPromise7Promise6alwaysFT6actionFT_T__GS0_x_">always(action:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allows async action response for always case. Will be called whether the promises
+is rejected or fullfilled.</p>
+
+<p><li><p>Parameters:</p></p>
+
+<p><ul>
+<li>action: action function.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <p><code>self</code> which is of type <code>Promise&lt;Wrapped&gt;</code></p></p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">always</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Wrapped</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>action</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>action function.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>self</code> which is of type <code>Promise&lt;Wrapped&gt;</code></p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/propellerlabs/PropellerController/tree/master/Source/Promise.swift#L156-L159">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://www.propellerlabs.co" target="_blank" rel="external">Propeller</a>. All rights reserved. (Last updated: 2017-02-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

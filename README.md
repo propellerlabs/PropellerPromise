@@ -7,7 +7,7 @@
 
 #PropellerPromise
 
-This framework is meant to be a lightweight promise/futures framework with support for async result types, piping `then` functions, creating promises from a set of other promises to be fired when that set is complete.
+This framework is meant to be a lightweight promise/futures framework with support for async result types, piping `then` functions, creating promises from a set of other promises to be fired when that set is complete. Read the full documentation [Swift](https://github.com/propellerlabs/PropellerPromise/tree/master/Source/docs/swift_output/index.html) generated using [Jazzy](https://github.com/realm/jazzy).
 
 ## Installation
 

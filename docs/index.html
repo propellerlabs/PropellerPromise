@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PropellerPromise  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="PropellerPromise  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">PropellerPromise Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/propellerlabs/PropellerPromise"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fgithub%2Ecom%2Fpropellerlabs%2FPropellerPromise%2Ftree%2Fmaster%2FSource%2Fdocs%2Fswift_output%2Fdocsets%2FPropellerPromise%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">PropellerPromise Reference</a>
+        <img id="carat" src="img/carat.png" />
+        PropellerPromise  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/CombinePromise.html">CombinePromise</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Promise.html">Promise</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Promisable.html">Promisable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/MultiError.html">MultiError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p><img src="https://api.travis-ci.org/propellerlabs/PropellerPromise.svg?branch=master" alt="Travis">
+<img src="https://img.shields.io/badge/platform-ios-lightgrey.svg" alt="Platform">
+<img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Swift">
+<img src="https://img.shields.io/badge/SPM-compatible-brightgreen.svg" alt="Swift Package Manager">
+<img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage">
+<img src="https://img.shields.io/badge/license-MIT-000000.svg" alt="MIT License"></p>
+<a href='#propellerpromise' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='propellerpromise'>PropellerPromise</h1>
+
+<p>This framework is meant to be a lightweight promise/futures framework with support for async result types, piping <code>then</code> functions, creating promises from a set of other promises to be fired when that set is complete. Read the full documentation <a href="https://github.com/propellerlabs/PropellerPromise/tree/master/Source/docs/swift_output/index.html">Swift</a> generated using <a href="https://github.com/realm/jazzy">Jazzy</a>.</p>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+<a href='#swift-package-manager' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='swift-package-manager'>Swift Package Manager</h3>
+<pre class="highlight plaintext"><code>dependencies: [
+    .Package(url: "https://github.com/propellerlabs/PropellerPromise.git", majorVersion: 1)
+]
+</code></pre>
+<a href='#carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='carthage'>Carthage</h3>
+<pre class="highlight plaintext"><code>github "propellerlabs/PropellerPromise"
+</code></pre>
+<a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cocoapods'>CocoaPods</h3>
+
+<p>Cocoapods will come soon, faster if there is a demand for it.</p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+<a href='#1-return-a-promise-in-a-function-that-asyncronously-deals-with-it-39-s-result' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='1-return-a-promise-in-a-function-that-asyncronously-deals-with-it-39-s-result'>1. Return a promise in a function that asyncronously deals with it&rsquo;s result</h3>
+<pre class="highlight plaintext"><code>func successPromise() -&gt; Promise&lt;String&gt; {
+    // create promise
+    let promise = Promise&lt;String&gt;()
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        // make async fullfillment of promise result
+        promise.fulfill(self.successString)
+    }
+
+    //return promise
+    return promise
+}
+</code></pre>
+<a href='#2-deal-with-failure-completion-cases' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='2-deal-with-failure-completion-cases'>2. Deal with failure/completion cases:</h3>
+<pre class="highlight plaintext"><code>successPromise()
+.complete { value in
+    print("complete with value: \(value)")
+}
+.failure { error in
+    print("failed wih error: \(error)")
+}
+</code></pre>
+<a href='#3-pipe-results-together-via-code-then-code-functions-passing-different-return-types-together' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='3-pipe-results-together-via-code-then-code-functions-passing-different-return-types-together'>3. Pipe results together via <code>then</code> functions passing different return types together:</h3>
+<pre class="highlight plaintext"><code>successPromise()
+.then { val -&gt; Bool in
+    // do something with val
+    return val == self.successString
+}
+.then { isSuccess -&gt; Int in
+    // do something with isSuccess
+    return isSuccess ? 1 : 0
+}
+.then { successInt -&gt; Void in
+    // do something with successInt
+}
+</code></pre>
+<a href='#4-create-a-promise-that-fires-after-several-other-promises-finish-using-code-combinepromise-code' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='4-create-a-promise-that-fires-after-several-other-promises-finish-using-code-combinepromise-code'>4. Create a promise that fires after several other promises finish using <code>CombinePromise</code>:</h3>
+<pre class="highlight plaintext"><code>// Say we have some promises we are waiting on:
+
+let p1 = successPromise()
+.complete { value in
+    print("completed! \(value)")
+}
+
+let p2 = successPromise()
+.complete { value in
+    print("completed! \(value)")
+}
+
+let p3 = successPromise()
+.complete { value in
+    print("completed! \(value)")
+}
+
+// Then want to fire a combined promise after p1,p2,p3 are all fullfilled/rejected
+
+CombinePromise(promises: [p1,p2,p3])
+.complete { results in
+    for result in results {
+        print(result)
+    }
+}
+.failure(MultiError.self) { errors in
+    for error in errors.errors {
+        print(error)
+    }
+}
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://www.propellerlabs.co" target="_blank" rel="external">Propeller</a>. All rights reserved. (Last updated: 2017-02-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
